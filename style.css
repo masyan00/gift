@@ -1,0 +1,109 @@
+/* Mengatur tampilan latar belakang */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fef8e7;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Gaya untuk animasi bunga */
+.flower {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    animation: popUp 1.5s ease-out forwards, spin 6s linear infinite;
+}
+
+/* Mengatur gaya kelopak bunga */
+.petal {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #ff69b4;
+    border-radius: 50% 50% 0 0;
+    transform-origin: bottom center;
+    opacity: 0;
+    animation: bloom 1.5s ease forwards;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Posisi dan Rotasi Kelopak */
+.petal:nth-child(1) {
+    transform: rotate(0deg) translateY(-25px);
+    animation-delay: 0.3s;
+}
+
+.petal:nth-child(2) {
+    transform: rotate(72deg) translateY(-25px);
+    animation-delay: 0.5s;
+}
+
+.petal:nth-child(3) {
+    transform: rotate(144deg) translateY(-25px);
+    animation-delay: 0.7s;
+}
+
+.petal:nth-child(4) {
+    transform: rotate(216deg) translateY(-25px);
+    animation-delay: 0.9s;
+}
+
+.petal:nth-child(5) {
+    transform: rotate(288deg) translateY(-25px);
+    animation-delay: 1.1s;
+}
+
+/* Gaya untuk pusat bunga */
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #ffa07a;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Animasi untuk efek muncul (pop up) */
+@keyframes popUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animasi untuk efek kelopak mekar */
+@keyframes bloom {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animasi untuk rotasi bunga */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Animation with Sparkles</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('img/bg.jpg') no-repeat center center;
+            background-size: cover;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .flower-image,
+        .love-image,
+        .side-image,
+        .leak1,
+        .leak2 {
+            position: absolute;
+            border-radius: 10px;
+            opacity: 0;
+        }
+
+        .flower {
+            width: 40vw;
+            left: 30%;
+            top: 30%;
+            animation: zoomOut 1.5s ease-out forwards;
+            animation-delay: 0.22s;
+        }
+
+        .leak1 {
+            width: 40vw;
+            left: 30%;
+            top: 30%;
+            animation: zoomOut 1.5s ease-out forwards;
+            animation-delay: 0.88s;
+        }
+
+        .leak2 {
+            width: 38vw;
+            left: 30.8%;
+            top: 29%;
+            animation: zoomOut 1.5s ease-out forwards;
+            animation-delay: 0.55s;
+        }
+
+        .side-image {
+            width: 25vw;
+            right: 5%;
+            top: 40%;
+            transform: translateY(-50%);
+            animation: slideIn 1s ease-out forwards;
+            animation-delay: 0.88s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .text {
+            position: absolute;
+            right: 6%;
+            top: 70%;
+            transform: translateY(-50%);
+            color: rgb(0, 0, 0);
+            font-size: 3vw;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 2.0s;
+        }
+
+        @keyframes zoomOut {
+            0% {
+                transform: scale(1.6);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 1.5vw;
+            height: 1.5vw;
+            background-color: #fffcfc;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+            opacity: 0;
+            animation: sparkle 1s ease-in-out infinite;
+        }
+
+        .sparkle1 {
+            top: 25%;
+            left: 32%;
+            animation-delay: 0.3s;
+        }
+
+        .sparkle2 {
+            top: 40%;
+            left: 36%;
+            animation-delay: 0.6s;
+        }
+
+        .sparkle3 {
+            top: 35%;
+            left: 38%;
+            animation-delay: 0.9s;
+        }
+
+        .sparkle4 {
+            top: 50%;
+            left: 34%;
+            animation-delay: 1.2s;
+        }
+
+        .sparkle5 {
+            top: 28%;
+            left: 40%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes sparkle {
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .flower,
+            .leak1,
+            .leak2 {
+                width: 60vw;
+                left: 20%;
+            }
+
+            .side-image {
+                width: 30vw;
+                right: 10%;
+            }
+
+            .text {
+                font-size: 4vw;
+                right: 10%;
+                top: 75%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <img src="img/flower1.png" alt="Flower" class="flower-image flower">
+    <img src="img/leak1.png" alt="Leak 1" class="leak1">
+    <img src="img/leak2.png" alt="Leak 2" class="leak2">
+    <div class="sparkle sparkle1"></div>
+    <div class="sparkle sparkle2"></div>
+    <div class="sparkle sparkle3"></div>
+    <div class="sparkle sparkle4"></div>
+    <div class="sparkle sparkle5"></div>
+
+    <script>
+        setTimeout(function () {
+            window.location.href = "gift.html";
+        }, 3000);
+    </script>
+</body>
+
+</html>
