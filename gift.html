@@ -10,16 +10,16 @@
         body {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
             background: url('img/bg.jpg') no-repeat center center;
             background-size: cover;
             text-align: center;
             overflow: hidden;
-            padding: 20px;
+            padding-top: 40px;
         }
 
         /* Animasi fade-in */
@@ -40,30 +40,31 @@
             font-size: 28px;
             color: #fff;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             opacity: 0;
-            animation: fadeIn 0.50s ease-in-out forwards;
+            animation: fadeIn 0.5s ease-in-out forwards;
         }
 
         /* Kontainer hadiah */
         .gift-container {
             opacity: 0;
-            animation: fadeIn 0.40s ease-in-out forwards;
-            animation-delay: 0.40s;
+            animation: fadeIn 0.4s ease-in-out forwards;
+            animation-delay: 0.4s;
+            margin-top: 10px;
         }
 
         /* Gambar hadiah */
         .gift-image {
-            width: 80%;
-            max-width: 500px;
-            border-radius: 30px;
+            width: 75%;
+            max-width: 450px;
+            border-radius: 20px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
 
         /* Tombol klaim hadiah */
         .claim-button {
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 15px;
             padding: 12px 20px;
             font-size: 18px;
             font-weight: bold;
@@ -75,8 +76,8 @@
             text-decoration: none;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             opacity: 0;
-            animation: fadeIn 0.40s ease-in-out forwards;
-            animation-delay: 0.40s;
+            animation: fadeIn 0.4s ease-in-out forwards;
+            animation-delay: 0.4s;
         }
 
         .claim-button:hover {
@@ -85,13 +86,23 @@
 
         /* Responsif untuk layar kecil */
         @media (max-width: 480px) {
+            body {
+                padding-top: 20px;
+            }
+
             h1 {
-                font-size: 24px;
+                font-size: 22px;
+                margin-bottom: 8px;
+            }
+
+            .gift-image {
+                width: 85%;
             }
 
             .claim-button {
                 font-size: 16px;
                 padding: 10px 15px;
+                margin-top: 10px;
             }
         }
     </style>
